@@ -6,6 +6,8 @@
 // Dependencies
 const http = require('http');
 const url = require('url');
+const config = require('./config');
+
 const StringDecoder = require('string_decoder').StringDecoder;
 
 const server = http.createServer((req, res) => {
@@ -58,8 +60,8 @@ const server = http.createServer((req, res) => {
     });
 });
 
-server.listen('7000', () => {
-    console.log(`server running on port 7000`);
+server.listen(config.port, () => {
+    console.log(`server running on port ${config.port}`);
 });
 
 const routes = {};
